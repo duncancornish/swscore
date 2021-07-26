@@ -28,4 +28,4 @@ for p in range(int(pcount)):
     players[p]=Player(p+1)
 
 for p in players:
-    players[p].show()
+    print("Player "+str(players[p].pnum)+":")
