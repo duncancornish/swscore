@@ -29,3 +29,19 @@ for p in range(int(pcount)):
 
 for p in players:
     print("Player "+str(players[p].pnum)+":")
+    cogs=input("How many cogs? ")
+    compasses=input("How many compasses? ")
+    tablets=input("How many tablets? ")
+    score=calculateScience(int(cogs), int(compasses), int(tablets))
+    score+=int(input("How many points from blue cards? "))
+    score+=int(input("How many points from military victories? "))
+    score-=int(input("How many military defeats? "))
+    money=float(input("How much leftover gold? "))
+    score+=int(money/3)
+    score+=int(input("How many points from the wonder? "))
+    score+=int(input("How many points from the guilds? "))
+    score+=int(input("How many points from yellow cards? "))
+    players[p].score=score
+print("Final scores:")
+for p in players:
+    print("Player "+str(players[p].pnum)+" had a score of "+str(players[p].score))
